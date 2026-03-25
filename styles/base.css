@@ -1,0 +1,34 @@
+html {
+  scrollbar-gutter: stable; /* Prevents layout shifts when scrollbar appears/disappears */
+}
+
+* {
+    box-sizing: border-box; /* Include padding in width calculation */
+    
+    /* Smooth transitions for theme changes */
+    transition: all var(--transition-speed) ease;
+}
+
+body{
+    background-color: var(--color-bg);
+
+    margin: 0;
+
+    /* Text settings */
+    font-family: Roboto, arial, sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--color-text);
+}
+
+i{
+    color: var(--color-fg);
+}

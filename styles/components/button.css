@@ -1,0 +1,11 @@
+button{
+    cursor: pointer;
+    
+    border: none;
+    background: none;
+}
+
+#theme-button {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}

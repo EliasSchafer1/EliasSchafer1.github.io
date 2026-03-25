@@ -1,0 +1,25 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* System preference override (Dark mode) */
+    --color-bg: var(--dark-bg);
+    --color-text: var(--dark-text);
+    --color-primary: var(--dark-primary);
+  }
+}
+
+[data-theme="light"] {
+  /* User selected light theme */
+  --color-bg: var(--light-bg);
+  --color-fg: var(--light-fg);
+  --color-text: var(--light-text);
+  --color-primary: var(--light-primary);
+}
+
+[data-theme="dark"] 
+{ 
+  /* User selected dark theme */
+  --color-bg: var(--dark-bg);
+  --color-fg: var(--dark-fg);
+  --color-text: var(--dark-text);
+  --color-primary: var(--dark-primary);
+}

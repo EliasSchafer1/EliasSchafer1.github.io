@@ -1,0 +1,42 @@
+/* =========================================
+Base colors
+========================================= */
+:root {
+  /* Light theme colors */
+  --light-bg: white;
+  --light-fg: black;
+  --light-text: black;
+  --light-primary: orange;
+
+  /* Dark theme colors */
+  --dark-bg: black;
+  --dark-fg: white;
+  --dark-text: white;
+  --dark-primary: #4f46e5;
+}
+
+/* =========================================
+General styles
+========================================= */
+:root {
+  /* Default to light theme */
+  /* DON'T FORGET TO ADD ANY NEW VARIABLE IN theme.css! */
+  --color-bg: var(--light-bg);
+  --color-fg: var(--light-fg);
+  --color-text: var(--light-text);
+  --color-primary: var(--light-primary);
+
+  /* Text settings */
+  --font-size-nav: 1.2rem;
+
+  /* Transition settings */
+  --transition-speed: 0.3s;
+
+  /* Shadow settings */
+  --shadow: 10px 10px 5px color-mix(in srgb, var(--color-fg) 20%, transparent);
+
+  /* Border settings */
+  --border: 1px solid var(--border-color);
+  --border-color: color-mix(in srgb, var(--color-fg) 20%, transparent);
+  --border-radius: 8px;
+}

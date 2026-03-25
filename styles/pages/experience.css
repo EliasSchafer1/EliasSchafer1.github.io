@@ -1,0 +1,115 @@
+/* Page styles for Experience page */
+main.experiences {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+main.experiences>div>h2{
+    text-align: center;
+}
+
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Individual experience item */
+.accordion-item {
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    text-align: left;
+}
+.accordion-header:hover {
+    background: color-mix(in srgb, var(--color-fg) 20%, transparent);
+}
+/* Title of experience */
+.accordion-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    flex-grow: 1;
+}
+.accordion-icon {
+    margin-right: 1rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+/* Dropdown arrow */
+.accordion-indicator {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-speed) ease;
+}
+/* Rotate indicator when expanded */
+.accordion-header[aria-expanded="true"] .accordion-indicator {
+    transform: rotate(180deg);
+}
+.accordion-indicator::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--color-text);
+}
+
+/* Description of experience */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    /* Expand/collaps content is handled in experience.js */
+    transition: max-height var(--transition-speed) ease;
+    padding: 0 1.5rem;
+}
+.accordion-subtitle {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordion-subtitle h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.accordion-subtitle .experience-date {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.accordion-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+.accordion-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile or small screens */
+@media (max-width: 900px) {    
+    .accordion-header {
+        padding: 1rem;
+    }
+    
+    .content-wrapper {
+        padding: 0 1rem 1rem;
+    }
+}

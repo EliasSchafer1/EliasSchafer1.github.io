@@ -1,0 +1,146 @@
+.timeline-description{
+    display: flex;
+    padding: 0 2rem;
+    justify-content: center;
+}
+.timeline-description h2{
+    font-weight: 500;
+}
+
+.timeline > ul {
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+/* Dotted line for the beginning of the timeline */
+.timeline > ul > li.dotted-line {
+    padding-bottom: 60px; /* Lenght of dotted line */
+    border: none; 
+    background: none;
+    border-left: 6px dotted var(--color-primary);
+    width: 0; /* Remove width to only show the dotted line */
+    margin-bottom: 4px;
+}
+.timeline > ul > li.dotted-line::before {
+    width: 0; /* Remove width to only show the dotted line */
+}
+
+/* Line on the timeline */
+.timeline > ul > li {
+    list-style: none;
+    position: relative;
+    
+    padding-bottom: 20px;
+    margin: 0 auto; /* Center the timeline */
+    width: 6px;
+
+    background-color: var(--color-primary);
+}
+
+/* Boxes on the timeline */
+.timeline-box {
+    position: relative;
+    width: calc(50vw - 70px); /* Half of the viewport width minus space for line and margin */
+    max-width: 600px;
+    padding: 0 1rem;
+
+    background: var(--color-bg);
+    color: var(--color-text);
+
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+/* Right side of the timeline */
+.timeline > ul > li:nth-child(even) .timeline-box {
+    left: 40px; /* Position box to the right of the line (34px + 6px line width) */
+}
+/* Left side of the timeline */
+.timeline > ul > li:nth-child(odd) .timeline-box {
+    left: -34px; /* Position box to the left of the line (34px) */
+    transform: translateX(-100%); /* Move box to the left of the line */
+}
+
+.location {
+    display: flex;
+    align-items: baseline; /* Align icon and text on the same baseline */
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.location-text {
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+/* Circle on the timeline */
+.timeline > ul > li::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the circle on the line */
+    
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background-color: var(--color-primary);
+    transition: background-color 0.3s ease;
+}
+
+/* Arrow on the timeline */
+.timeline .timeline-box::before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    width: 0;
+
+    border-width: 9px 18px 9px 18px;
+    border-style: solid;
+    border-color: transparent var(--color-fg);
+    transition: border-color 0.3s ease;
+}
+
+/* Arrow for the right side */
+.timeline > ul > li:nth-child(even) .timeline-box::before {
+    content: "";
+    position: absolute;
+
+    left: -18px;
+    border-left-width: 0px; /* Arrow pointing to the left */
+}
+
+/* Arrow for the left side */
+.timeline > ul > li:nth-child(odd) .timeline-box::before {
+    content: "";
+    position: absolute;
+
+    right: -18px;
+    border-right-width: 0px; /* Arrow pointing to the right */
+}
+
+/* Mobile or small screens */
+@media (max-width: 900px) {  
+    /* Move timeline to the left */
+    .timeline > ul > li {
+        margin-left: 50px;
+    }
+
+    .timeline-box{
+        width: calc(100vw - 146px); /* Full width minus space for line and margin */
+    }
+
+    /* Move boxes to the right of the line */  
+    .timeline > ul > li:nth-child(odd) .timeline-box{
+        left: 40px;
+        transform: none; /* Remove left translation */
+    }
+    .timeline > ul > li:nth-child(odd) .timeline-box::before {
+        content: "";
+        position: absolute;
+
+        left: -18px;
+        border-left-width: 0px; /* Arrow pointing to the left */
+        border-right-width: 18px; 
+    }
+}
