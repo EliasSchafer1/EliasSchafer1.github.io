@@ -75,3 +75,12 @@
   width: 30px;
   height: 30px;
 }
+#theme-toggle>i{
+  font-size: 20px;
+}
+#theme-toggle::before {
+  content: "🌙";
+}
+[data-theme="dark"] #theme-toggle::before {
+  content: "☀️";
+}

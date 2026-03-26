@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projects</title>
+    <!-- Loading initial theme -->
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        const systemIsDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        // Use saved theme if available, otherwise use system preference (default to light)
+        const effectiveTheme = savedTheme || (systemIsDark ? "dark" : "light");
+        document.documentElement.dataset.theme = effectiveTheme;
+    </script>
     <!-- Load stylesheets -->
     <link rel="stylesheet" href="/styles/main.css">
     <!-- Load fonts -->
@@ -21,7 +29,7 @@
     <section class="project-grid">
         <a href="https://play.google.com/store/apps/details?id=com.EliasSchafer.OMaze3D&hl=de_CH" target="_blank" class="project-card">
           <h3>O-Maze 3D</h3>
-          <p>3D puzzle game developed with Unity.</p>
+          <p>Orienteering simulation game in a 3D-labyrinth developed with Unity.</p>
           <div class="project-image">
           <img src="/assets/images/O-Maze3D.jpg" alt="O-Maze 3D">
           </div>

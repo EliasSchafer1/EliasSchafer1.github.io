@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Experience</title>
+    <!-- Loading initial theme -->
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        const systemIsDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        // Use saved theme if available, otherwise use system preference (default to light)
+        const effectiveTheme = savedTheme || (systemIsDark ? "dark" : "light");
+        document.documentElement.dataset.theme = effectiveTheme;
+    </script>
     <!-- Load stylesheets -->
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Dropdown arrow icon -->

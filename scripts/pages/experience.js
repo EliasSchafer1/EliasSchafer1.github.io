@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     // Open/close function
     function toggleAccordion(header, content, expand) {
         if (!content) return;

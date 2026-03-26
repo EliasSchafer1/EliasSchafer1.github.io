@@ -1,20 +1,21 @@
 // Menu toggle functionality
 function initMenu() {
-  const menuButton = document.querySelector(".menu-button");
-  const sidebar = document.querySelector(".sidebar");
-  const overlay = document.querySelector(".overlay");
-  if (menuButton && sidebar && overlay) {
+  // Any clicks on the page are handled here
+  document.addEventListener("click", (e) =>{
+    const menuButton = e.target.closest(".menu-button");
+    const sidebar = document.querySelector(".sidebar");
+    const overlay = document.querySelector(".overlay");
     // Open sidebar on menu button click
-    menuButton.addEventListener("click", () => {
+    if (menuButton && sidebar && overlay) {
       sidebar.classList.toggle("open");
       overlay.classList.toggle("show");
-    });
+    }
     // Close sidebar when clicking outside
-    overlay.addEventListener("click", () => {
-      sidebar.classList.remove("open");
-      overlay.classList.remove("show");
-    });
-  }
+    if(e.target.classList.contains("overlay")){
+        sidebar.classList.remove("open");
+        overlay.classList.remove("show");
+    };
+  })
 }
 
 // Set page title in header
@@ -25,8 +26,6 @@ function initPageTitle() {
   }
 }
 
-// Initialize immediately and after partials load
-initMenu();
-initPageTitle();
-document.addEventListener('partialsLoaded', () => { initMenu(); initPageTitle(); });
-document.addEventListener('DOMContentLoaded', () => { initMenu(); initPageTitle(); });
+// Initialize
+document.addEventListener('partialsLoaded', () => { initPageTitle(); });
+document.addEventListener('DOMContentLoaded', () => { initMenu(); });

@@ -2,6 +2,7 @@
 /* #region Sidebar */
 .sidebar {
   background-color: var(--color-primary);
+  color: var(--color-text);
 
   position: fixed;
   top: 0;
@@ -39,7 +40,7 @@
   font-size: var(--font-size-nav);
   font-weight: 500;
   text-decoration: none;
-  color: black;
+  color: var(--color-text);
 }
 .sidebar-nav a:hover {
   background-color: rgba(0, 0, 0, 0.1);
