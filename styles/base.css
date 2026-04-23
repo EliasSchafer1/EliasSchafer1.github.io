@@ -32,3 +32,19 @@ h1, h2, h3, h4, h5, h6{
 i{
     color: var(--color-fg);
 }
+
+.icon{
+    width: 24px;
+    height: 24px;
+
+    display: inline-block; 
+    fill: var(--color-fg);
+    transition: fill 0.3s ease;
+}
+
+button{
+    cursor: pointer;
+    
+    border: none;
+    background: none;
+}

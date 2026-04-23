@@ -38,6 +38,7 @@
 .site-header .header-middle-section {
   flex: 1;
   padding: 1rem;
+  margin-left: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -83,4 +84,11 @@
 }
 [data-theme="dark"] #theme-toggle::before {
   content: "☀️";
+}
+
+/* Mobile or small screens */
+@media (max-width: 900px) {
+  .site-header .header-middle-section {
+    margin-left: 0rem;
+  }
 }
