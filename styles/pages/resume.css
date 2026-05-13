@@ -3,9 +3,6 @@
     padding: 0 2rem;
     justify-content: center;
 }
-.timeline-description h2{
-    font-weight: 500;
-}
 
 .timeline > ul {
     margin-bottom: 50px;

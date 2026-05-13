@@ -48,3 +48,18 @@ button{
     border: none;
     background: none;
 }
+
+.framed-link{
+  color: var(--color-primary);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+}
+.framed-link:hover{
+  transform: translateY(-6px);
+}

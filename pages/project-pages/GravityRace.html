@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gravity Race</title>
+    <!-- Loading initial theme -->
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        const systemIsDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        // Use saved theme if available, otherwise use system preference (default to light)
+        const effectiveTheme = savedTheme || (systemIsDark ? "dark" : "light");
+        document.documentElement.dataset.theme = effectiveTheme;
+    </script>
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="/styles/theme.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout/footer.css">
+    <link rel="stylesheet" href="/styles/layout/header.css">
+    <link rel="stylesheet" href="/styles/layout/sidebar.css">
+    <!-- Local styles -->
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
+    <!-- Load fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Load header and sidebar -->
+  <div class="header-container" data-include="header"></div>
+  <div data-include="sidebar"></div>
+
+  <main>
+    <div class="container">
+        <h1>Gravity Race</h1>
+        <p class="subtitle">
+            Gravity Race is a physics-based mobile game developed for Android.
+            Compete against your friends to be the first to reach the finish line.
+            In single-player mode, you race against the clock or play various mini-games.
+        </p>
+    </div>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Preview</div>
+            <span class="line"></span>
+        </div>
+    </section>
+    <!-- Preview gallery outside to allow more space for pictures -->
+    <div class="image-gallery">
+        <img src="/assets/images/projects/GravityRace/Preview1.jpeg">
+        <img src="/assets/images/projects/GravityRace/Preview2.jpeg">
+    </div>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Description</div>
+            <span class="line"></span>
+        </div>
+        <p>
+            I was first introduced to programming during a course in my exchange year in Sweden, where we built a simple Flappy Bird game using C#.
+            I really enjoyed the process and started extending the project by adding increasing difficulty and different themes.
+            Seeing that I was interested in building more complex games, my teacher suggested that I take a look at the game engine Unity. 
+        </p>
+
+        <p>
+            At the time, I often played a chicken racing mini-game with friends, but we wanted more variety in levels and challenges.
+            This inspired my first independent project: creating my own version of the game with new levels, obstacles, and themes.
+            For single-player mode, I also added several mini-games, including two endless modes.
+        </p>
+    </section>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Technologies</div>
+            <span class="line"></span>
+        </div>
+        <div class="tech-list">
+            <div class="tech-item">
+                <h3>Unity (C#)</h3>
+                <p>Game development & programming</p>
+            </div>
+            <div class="tech-item">
+                <h3>Android</h3>
+                <p>Deployment platform</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Learnings</div>
+            <span class="line"></span>
+        </div>
+
+         <p>
+            This project was my first experience working with a larger framework like Unity and building a complete application for Android. 
+            I learned how to structure a growing codebase, organize different scripts and game systems, and handle challenges such as varying screen sizes.
+        </p>
+
+        <h3>What I Would Improve Today</h3>
+
+        <p>
+            Looking back, I would focus more on writing cleaner and more maintainable code, for example by improving naming conventions, 
+            avoiding many long methods, writing meaningful comments, and organizing logic more clearly. This project marks the beginning of my development journey, 
+            where I learned primarily through experimentation and iteration.
+        </p>
+    </section>
+  </main>
+
+  <footer>    
+    <div class="social-links">
+        <!-- Mail -->
+        <a href="mailto:elias.schafer@bluewin.ch" target="_blank" aria-label="Open E-Mail">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/elias-schafer-916762316" target="_blank" aria-label="Open LinkedIn Profile">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+            </svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/EliasSchafer1" target="_blank" aria-label="Open GitHub Profile">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+            </svg>
+        </a>
+    </div>
+    <p>&copy; 2026 Elias Schafer</p>
+  </footer>
+
+  <!-- Load scripts -->
+  <script src="/scripts/theme.js" defer></script>
+  <script src="/scripts/includes.js" defer></script>
+  <script src="/scripts/navigation.js" defer></script>
+</body>
+</html>
