@@ -1,0 +1,70 @@
+/* Wrapper */
+.bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+/* Grid in background */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+}
+
+/* Moving Orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px); 
+  animation: float 9s ease-in-out infinite;
+  animation-delay: 0s;
+  pointer-events: none;
+}
+/* One Orb bottom left, one top right */
+.bg-orb-1 {
+  width: 400px;
+  height: 400px;
+  top: 0px;
+  right: -100px;
+}
+.bg-orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -300px;
+  left: -80px;
+}
+
+/* Light mode */
+.bg-grid-light {
+  background-image:
+    linear-gradient(to right, rgba(255,140,0,.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,140,0,.3) 1px, transparent 1px);
+  opacity: 1;
+  transition: opacity calc(var(--transition-speed) * 2) ease;
+}
+.bg-orb { background: rgba(255, 170, 0, 0.5); }
+
+/* Dark mode */
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(79,70,229,.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79,70,229,.6) 1px, transparent 1px);
+  opacity: 0;
+  transition: opacity calc(var(--transition-speed) * 2) ease;
+}
+[data-theme="dark"] .bg-grid-light { opacity: 0; }
+[data-theme="dark"] .bg-grid-dark  { opacity: 1; }
+[data-theme="dark"] 
+.bg-orb { 
+  background: rgba(79,70,229,.6); 
+  filter: blur(90px); /* Reduce blur to make it look similar as in light mode */
+}
+
+/* Big orbs move slowly */
+@keyframes float {
+  0%, 100% { transform: translateY(0px)}
+  50%       { transform: translateY(-200px)}
+}

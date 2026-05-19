@@ -7,8 +7,10 @@
 .container{
     margin-top: 0rem;
 }
-
 .container h1{
+    text-align: center;
+}
+.container .subtitle{
     text-align: center;
 }
 
@@ -91,6 +93,7 @@
     border: var(--border);
     border-color: var(--border-color);
     border-radius: var(--border-radius);
+    background-color: var(--color-bg);
 }
 
 .tech-item h3 {

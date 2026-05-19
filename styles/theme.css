@@ -2,6 +2,7 @@
   :root {
     /* System preference override (Dark mode) */
     --color-bg: var(--dark-bg);
+    --color-title: var(--dark-title);
     --color-text: var(--dark-text);
     --color-primary: var(--dark-primary);
   }
@@ -11,6 +12,7 @@
   /* User selected light theme */
   --color-bg: var(--light-bg);
   --color-fg: var(--light-fg);
+  --color-title: var(--light-title);
   --color-text: var(--light-text);
   --color-primary: var(--light-primary);
 }
@@ -20,6 +22,7 @@
   /* User selected dark theme */
   --color-bg: var(--dark-bg);
   --color-fg: var(--dark-fg);
+  --color-title: var(--dark-title);
   --color-text: var(--dark-text);
   --color-primary: var(--dark-primary);
 }

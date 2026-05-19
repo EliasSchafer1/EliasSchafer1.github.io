@@ -1,5 +1,6 @@
 footer {
     padding-top: 1rem;
+    padding-bottom: 1rem;
     text-align: center;
 }
 
@@ -9,6 +10,9 @@ footer {
     justify-content: center;
     gap: 2rem;
     margin-top: 1rem;
+}
+.social-links a{
+    background-color: transparent;
 }
 .social-links .icon {
     width: 40px;
