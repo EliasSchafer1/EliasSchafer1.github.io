@@ -18,3 +18,13 @@
     display: inline-block;
     margin-top: 0rem;
 }
+
+/* For small screens */
+@media (max-width: 600px) {
+  .presentation{
+    padding: 0 1rem;
+  }
+  .presentation p{
+    padding: 0;
+  }
+}
