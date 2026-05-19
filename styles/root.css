@@ -5,13 +5,15 @@ Base colors
   /* Light theme colors */
   --light-bg: white;
   --light-fg: black;
+  --light-title: black;
   --light-text: black;
   --light-primary: orange;
 
   /* Dark theme colors */
   --dark-bg: black;
   --dark-fg: white;
-  --dark-text: white;
+  --dark-title: white;
+  --dark-text: rgba(255,255,255,0.87);
   --dark-primary: #4f46e5;
 }
 
@@ -37,6 +39,6 @@ General styles
 
   /* Border settings */
   --border: 1px solid var(--border-color);
-  --border-color: color-mix(in srgb, var(--color-fg) 20%, transparent);
+  --border-color: color-mix(in srgb, var(--color-fg) 30%, transparent);
   --border-radius: 8px;
 }

@@ -12,8 +12,16 @@
         const effectiveTheme = savedTheme || (systemIsDark ? "dark" : "light");
         document.documentElement.dataset.theme = effectiveTheme;
     </script>
-    <!-- Load stylesheets -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="/styles/theme.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout/background.css">
+    <link rel="stylesheet" href="/styles/layout/footer.css">
+    <link rel="stylesheet" href="/styles/layout/header.css">
+    <link rel="stylesheet" href="/styles/layout/sidebar.css">
+    <!-- Local styles -->
+    <link rel="stylesheet" href="/styles/pages/experience.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Dropdown arrow icon -->
     <!-- Load fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +30,8 @@
 </head>
 
 <body>
+  <!-- Load background -->
+  <div data-include="background"></div>
   <!-- Load header and sidebar -->
   <div class="header-container" data-include="header"></div>
   <div data-include="sidebar"></div>
@@ -143,6 +153,13 @@
                     <h3>Planned Bachelor Thesis at SBB</h3>
                     <span class="experience-date">(Autumn 2026)</span>
                 </div>
+                <p>
+                    In my bachelor thesis, I investigate uncertainty quantification methods for train occupancy forecasting. 
+                    The goal is to construct calibrated confidence intervals around occupancy predictions in order to estimate prediction uncertainty.<br><br>
+                    These uncertainty estimates can support the Swiss Federal Railways (SBB) in operational decision-making, 
+                    for example when planning train capacity and the number of wagons required and I will work with real world data.<br><br>
+                    The project is based on real-world operational data provided by the SBB.
+                </p>
                 <div class="accordion-subtitle">
                     <h3>Machine Learning (University course)</h3>
                     <span class="experience-date">(Autumn 2025)</span>
@@ -214,5 +231,6 @@
   <script src="/scripts/includes.js" defer></script>
   <script src="/scripts/navigation.js" defer></script>
   <script src="/scripts/pages/experience.js" defer></script>
+  <script src="/scripts/background.js" defer></script>
 </body>
 </html>

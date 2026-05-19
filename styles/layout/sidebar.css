@@ -2,7 +2,7 @@
 /* #region Sidebar */
 .sidebar {
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: var(--color-title);
 
   position: fixed;
   top: 0;
@@ -40,16 +40,15 @@
   font-size: var(--font-size-nav);
   font-weight: 500;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-title);
 }
 .sidebar-nav a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background: color-mix(in srgb, var(--color-primary) 50%, var(--color-bg));
 }
 /* Overlay to cover content when sidebar is open */
 .overlay {
   position: fixed;
   inset: 0;
-  background: var(--color-primary);
   opacity: 0;
   
   pointer-events: none;
@@ -57,7 +56,6 @@
   z-index: 2000;
 }
 .overlay.show {
-  opacity: 0.4;
   pointer-events: auto;
 }
 /* #endregion */

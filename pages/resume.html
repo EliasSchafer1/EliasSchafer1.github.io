@@ -11,8 +11,16 @@
         const effectiveTheme = savedTheme || (systemIsDark ? "dark" : "light");
         document.documentElement.dataset.theme = effectiveTheme;
     </script>
-    <!-- Load stylesheets -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="/styles/theme.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout/background.css">
+    <link rel="stylesheet" href="/styles/layout/footer.css">
+    <link rel="stylesheet" href="/styles/layout/header.css">
+    <link rel="stylesheet" href="/styles/layout/sidebar.css">
+    <!-- Local styles -->
+    <link rel="stylesheet" href="/styles/pages/resume.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Location icon -->
     <!-- Load fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +29,8 @@
 </head>
 
 <body>
+  <!-- Load background -->
+  <div data-include="background"></div>
   <!-- Load header and sidebar -->
   <div class="header-container" data-include="header"></div>
   <div data-include="sidebar"></div>
@@ -205,5 +215,6 @@
   <script src="/scripts/theme.js" defer></script>
   <script src="/scripts/includes.js" defer></script>
   <script src="/scripts/navigation.js" defer></script>
+  <script src="/scripts/background.js" defer></script>
 </body>
 </html>

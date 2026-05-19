@@ -12,8 +12,16 @@
         const effectiveTheme = savedTheme || (systemIsDark ? "dark" : "light");
         document.documentElement.dataset.theme = effectiveTheme;
     </script>
-    <!-- Load stylesheets -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="/styles/theme.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout/background.css">
+    <link rel="stylesheet" href="/styles/layout/footer.css">
+    <link rel="stylesheet" href="/styles/layout/header.css">
+    <link rel="stylesheet" href="/styles/layout/sidebar.css">
+    <!-- Local styles -->
+    <link rel="stylesheet" href="/styles/pages/projects-overview.css">
     <!-- Load fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,24 +29,26 @@
 </head>
 
 <body>
+  <!-- Load background -->
+  <div data-include="background"></div>
   <!-- Load header and sidebar -->
   <div class="header-container" data-include="header"></div>
   <div data-include="sidebar"></div>
 
   <main class="projects">
     <section class="project-grid">
-        <a href="https://play.google.com/store/apps/details?id=com.EliasSchafer.OMaze3D&hl=de_CH" target="_blank" class="project-card">
+        <a href="/pages/project-pages/O-Maze3d.html" class="project-card">
           <h3>O-Maze 3D</h3>
-          <p>Orienteering simulation game in a 3D-labyrinth developed with Unity.</p>
+          <p>Orienteering simulation game in a 3D-labyrinth developed with Unity</p>
           <div class="project-image">
-          <img src="/assets/images/O-Maze3D.jpg" alt="O-Maze 3D">
+          <img src="/assets/images/projects/O-Maze3D/O-Maze3D.jpg" alt="O-Maze 3D">
           </div>
         </a>
-        <a href="/pages/projects/GravityRace.html" class="project-card">
+        <a href="/pages/project-pages/GravityRace.html" class="project-card">
           <h3>Gravity Race</h3>
           <p>Physics-based race game developed with Unity</p>
           <div class="project-image">
-          <img src="/assets/images/GravityRace.jpeg" alt="Gravity Race">
+          <img src="/assets/images/projects/GravityRace/GravityRace.jpeg" alt="Gravity Race">
           </div>
         </a>
     </section>
@@ -72,5 +82,6 @@
   <script src="/scripts/theme.js" defer></script>
   <script src="/scripts/includes.js" defer></script>
   <script src="/scripts/navigation.js" defer></script>
+  <script src="/scripts/background.js" defer></script>
 </body>
 </html>

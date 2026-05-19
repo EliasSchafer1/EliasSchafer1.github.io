@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>Gravity Race</title>
     <!-- Loading initial theme -->
     <script>
         const savedTheme = localStorage.getItem("theme");
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/styles/layout/header.css">
     <link rel="stylesheet" href="/styles/layout/sidebar.css">
     <!-- Local styles -->
-    <link rel="stylesheet" href="/styles/pages/home.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <!-- Load fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,16 +36,85 @@
   <div data-include="sidebar"></div>
 
   <main>
-    <img class="profile-image" src="/assets/images/profile_picture.jpg">
-    <div class="presentation">
-        <h1 class="presentation">Elias Schafer</h1>
-        <h3>Software Developer exploring Data Science</h3>
-        <p class="presentation">
-            I started building mobile games and strengthened my algorithmic problem-solving skills through competitive programming.
-            With a strong interest in mathematics, I am now focusing on data science and machine learning.
+    <div class="container">
+        <h1>Gravity Race</h1>
+        <p class="subtitle">
+            Gravity Race is a physics-based mobile game developed for Android.
+            Compete against your friends to be the first to reach the finish line.
+            In single-player mode, you race against the clock or play various mini-games.
         </p>
-        <a class="framed-link" href="/pages/projects-overview.html">View projects</a>
     </div>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Preview</div>
+            <span class="line"></span>
+        </div>
+    </section>
+    <!-- Preview gallery outside to allow more space for pictures -->
+    <div class="image-gallery">
+        <img src="/assets/images/projects/GravityRace/Preview1.jpeg">
+        <img src="/assets/images/projects/GravityRace/Preview2.jpeg">
+    </div>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Description</div>
+            <span class="line"></span>
+        </div>
+        <p>
+            I was first introduced to programming during a course in my exchange year in Sweden, where we built a simple Flappy Bird game using C#.
+            I really enjoyed the process and started extending the project by adding increasing difficulty and different themes.
+            Seeing that I was interested in building more complex games, my teacher suggested that I take a look at the game engine Unity. 
+        </p>
+
+        <p>
+            At the time, I often played a chicken racing mini-game with friends, but we wanted more variety in levels and challenges.
+            This inspired my first independent project: creating my own version of the game with new levels, obstacles, and themes.
+            For single-player mode, I also added several mini-games, including two endless modes.
+        </p>
+    </section>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Technologies</div>
+            <span class="line"></span>
+        </div>
+        <div class="tech-list">
+            <div class="tech-item">
+                <h3>Unity (C#)</h3>
+                <p>Game development & programming</p>
+            </div>
+            <div class="tech-item">
+                <h3>Android</h3>
+                <p>Deployment platform</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <div class="headline-wrapper">
+            <span class="line"></span>
+            <div class="project-headline">Learnings</div>
+            <span class="line"></span>
+        </div>
+
+         <p>
+            This project was my first experience working with a larger framework like Unity and building a complete application for Android. 
+            I learned how to structure a growing codebase, organize different scripts and game systems, and handle challenges such as varying screen sizes.
+        </p>
+
+        <h3>What I Would Improve Today</h3>
+
+        <p>
+            Looking back, I would focus more on writing cleaner and more maintainable code, for example by improving naming conventions, 
+            avoiding many long methods, writing meaningful comments, and organizing logic more clearly. This project marks the beginning of my development journey, 
+            where I learned primarily through experimentation and iteration.
+        </p>
+    </section>
   </main>
 
   <footer>    

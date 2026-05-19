@@ -15,20 +15,55 @@ body{
     margin: 0;
 
     /* Text settings */
+    color: var(--color-title);
     font-family: Roboto, arial, sans-serif;
-    color: var(--color-text);
     line-height: 1.6;
 }
 
 a{
     text-decoration: none;
     color: var(--color-primary);
+    background-color: var(--color-bg);
 }
 
 h1, h2, h3, h4, h5, h6{
+    color: var(--color-title);
+}
+p{
     color: var(--color-text);
 }
 
 i{
     color: var(--color-fg);
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+
+    display: inline-block; 
+    fill: var(--color-fg);
+    transition: fill 0.3s ease;
+}
+
+button{
+    cursor: pointer;
+    
+    border: none;
+    background: none;
+}
+
+.framed-link{
+  color: var(--color-primary);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+}
+.framed-link:hover{
+  transform: translateY(-6px);
 }
