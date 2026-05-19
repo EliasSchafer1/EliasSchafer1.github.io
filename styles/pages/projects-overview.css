@@ -30,3 +30,15 @@
 .project-card h3 {
   margin-top: 0;
 }
+
+/* For small screens */
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem;
+    gap: 1rem;
+  }
+  .project-card {
+    height: auto; /* No need to limit the height */
+  }
+}

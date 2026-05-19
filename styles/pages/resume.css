@@ -2,6 +2,7 @@
     display: flex;
     padding: 0 2rem;
     justify-content: center;
+    text-align: center;
 }
 
 .timeline > ul {
@@ -120,11 +121,11 @@
 @media (max-width: 900px) {  
     /* Move timeline to the left */
     .timeline > ul > li {
-        margin-left: 50px;
+        margin-left: 20px;
     }
 
     .timeline-box{
-        width: calc(100vw - 146px); /* Full width minus space for line and margin */
+        width: calc(100vw - 86px); /* Full width minus space for line and margin */
     }
 
     /* Move boxes to the right of the line */  
@@ -137,7 +138,13 @@
         position: absolute;
 
         left: -18px;
+        right: auto;
         border-left-width: 0px; /* Arrow pointing to the left */
         border-right-width: 18px; 
+    }
+
+    /* Reduce padding */
+    .timeline-description{
+        padding: 0 1rem;
     }
 }

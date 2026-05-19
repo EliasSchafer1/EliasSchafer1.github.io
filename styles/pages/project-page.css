@@ -105,9 +105,19 @@
     margin: 0;
 }
 
-/* For very small screens */
-@media (max-width: 550px) {    
-    .preview-gallery img{
-        max-width: 350px;
+/* For small screens */
+@media (max-width: 600px) { 
+    .tech-list{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .image-gallery{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .container,
+    .project-section{
+        padding: 0 1rem;
     }
 }

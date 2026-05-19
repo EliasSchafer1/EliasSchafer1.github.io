@@ -4,8 +4,9 @@ html {
 
 * {
     box-sizing: border-box; /* Include padding in width calculation */
-    
-    /* Smooth transitions for theme changes */
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--color-primary) 50%, var(--color-bg));
+
+    /* Smooth transitions */
     transition: all var(--transition-speed) ease;
 }
 
