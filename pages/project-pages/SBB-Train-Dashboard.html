@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gravity Race</title>
+    <title>SBB Train Dashboard</title>
     <!-- Loading initial theme -->
     <script>
         const savedTheme = localStorage.getItem("theme");
@@ -37,12 +37,14 @@
 
   <main>
     <div class="container">
-        <h1>Gravity Race</h1>
+        <h1>SBB Train Dashboard</h1>
         <p class="subtitle">
-            Gravity Race is a physics-based mobile game developed for Android.
-            Compete against your friends to be the first to reach the finish line.
-            In single-player mode, you race against the clock or play various mini-games.
+            SBB Train Dashboard is an interactive EDA dashboard for average daily train frequencies
+            across SBB route sections in Switzerland, by month (2024-2025).
         </p>
+        <a class="framed-link" href="https://github.com/EliasSchafer1/SBB-Train-Dashboard" target="_blank">
+                View on GitHub
+        </a>
     </div>
 
     <section class="project-section">
@@ -54,8 +56,9 @@
     </section>
     <!-- Preview gallery outside to allow more space for pictures -->
     <div class="image-gallery">
-        <img src="/assets/images/projects/GravityRace/Preview1.jpeg">
-        <img src="/assets/images/projects/GravityRace/Preview2.jpeg">
+        <img src="/assets/images/projects/SBB-Train-Dashboard/Preview1.jpg">
+        <img src="/assets/images/projects/SBB-Train-Dashboard/Preview2.jpg">
+        <img src="/assets/images/projects/SBB-Train-Dashboard/Preview3.jpg">
     </div>
 
     <section class="project-section">
@@ -65,17 +68,32 @@
             <span class="line"></span>
         </div>
         <p>
-            I was first introduced to programming during a course in my exchange year in Sweden, where we built a simple Flappy Bird game using C#.
-            I really enjoyed the process and started extending the project by adding increasing difficulty and different themes.
-            Seeing that I was interested in building more complex games, my teacher suggested that I take a look at the game engine Unity. 
+            We built this project in a team of three for a Data Science course at the University of Bern,
+            using a real-world dataset published by SBB.
+            It contains the monthly average daily number of trains, divided into passenger and freight trains.
         </p>
-
         <p>
-            At the time, I often played a chicken racing mini-game with friends, but we wanted more variety in levels and challenges.
-            This inspired my first independent project: creating my own version of the game with new levels, obstacles, and themes.
-            For single-player mode, I also added several mini-games, including two endless modes.
+            There was no fixed research question that we wanted to answer - the goal was rather to
+            practice a part of the data science workflow by preparing and exploring the dataset, and building something usable along the way.
+            It also gave me the chance to practice team collaboration with GitHub and focus on reproducibility.
         </p>
+ 
+        <h3>My Contribution</h3>
+        <ul>
+            <li>Data cleaning and preprocessing of the raw SBB dataset</li>
+            <li>All interactive plots in the Explore section</li>
+            <li>Refactoring of the whole codebase to improve interpretability and overall user experience</li>
+            <li>Writing the README to document project setup and usage</li>
+        </ul>
+
+        <h3>Explore Section - Interactive Plots</h3>
+        <ul>
+            <li>Line chart comparing multiple route sections over the months of a selected year</li>
+            <li>Line chart comparing data for a single route section in 2025 and 2024</li>
+            <li>Map plotting all route sections across Switzerland, colored by traffic intensity</li>
+        </ul>
     </section>
+    
 
     <section class="project-section">
         <div class="headline-wrapper">
@@ -85,12 +103,24 @@
         </div>
         <div class="tech-list">
             <div class="tech-item">
-                <h3>Unity (C#)</h3>
-                <p>Game development & programming</p>
+                <h3>Streamlit (Python)</h3>
+                <p>Interactive dashboard framework</p>
             </div>
             <div class="tech-item">
-                <h3>Android</h3>
-                <p>Deployment platform</p>
+                <h3>Pandas & Plotly</h3>
+                <p>Data processing & visualization</p>
+            </div>
+            <div class="tech-item">
+                <h3>Folium & GeoPandas</h3>
+                <p>Interactive geospatial map</p>
+            </div>
+            <div class="tech-item">
+                <h3>Poetry</h3>
+                <p>Dependency management & reproducibility</p>
+            </div>
+            <div class="tech-item">
+                <h3>Git & GitHub</h3>
+                <p>Version control & team collaboration</p>
             </div>
         </div>
     </section>
@@ -102,17 +132,52 @@
             <span class="line"></span>
         </div>
 
-         <p>
-            This project was my first experience working with a larger framework like Unity and building a complete application for Android. 
-            I learned how to structure a growing codebase, organize different scripts and game systems, and handle challenges such as varying screen sizes.
+        <p>
+            In this project, it was the first time that I worked with a setup where I had to think about
+            reproducibility more explicitly, since in my previous projects with Unity and Flutter,
+            it was handled automatically by the framework.
+            We focused on a reliable project setup (without going as far as containerizing it with Docker) 
+            by using Poetry for dependency management and writing a clear README.
+        </p>
+        <p>
+            For collaboration, we used Git and followed best practices such as working with separate branches and pull requests.
         </p>
 
+        <p>
+            On the data side, I learned how much small representation choices affect interpretability, 
+            and to be careful when handling missing values - for example switching from sums to averages where sums were misleading, 
+            because missing values were treated as zero.
+        </p>
+
+        <p>
+            The coolest feature in my opinion is the rolling mean option to smooth out graphs, 
+            because it makes it much easier to see the underlying trend. The first chart shows
+            the raw monthly data and the second one applies a 3-month rolling mean
+            (2025, all train types on the route section Tössmühle - Tössmühle Ost):
+        </p>
+        <div class="image-gallery">
+            <img src="/assets/images/projects/SBB-Train-Dashboard/Graph1.jpg">
+            <img src="/assets/images/projects/SBB-Train-Dashboard/Graph1-smoothed.jpg">
+        </div>
+        
+        <p>
+            We get a particularly interesting insight from the data when comparing the 2024 passenger trains
+            of the sections Gotthard Nord (Spw) - Airolo and Rynächt (Abzw) - Sedrun SMF.
+            The traffic patterns of these two sections are strongly complementary, with a clear shift after August 2024.
+            This is due to the reopening of the Gotthard Base Tunnel on September 2nd, 2024,
+            which restored the normal routing between Rynächt and Sedrun and shifted traffic away from the 
+            alternative route via Airolo.
+        </p>
+        <div class="image-gallery">
+            <img src="/assets/images/projects/SBB-Train-Dashboard/Graph2.jpg">
+        </div>
+        
         <h3>What I Would Improve Today</h3>
 
         <p>
-            Looking back, I would focus more on writing cleaner and more maintainable code, for example by improving naming conventions, 
-            avoiding many long methods, writing meaningful comments, and paying more attention to writing modular code. This project marks the beginning of my development journey, 
-            where I learned mostly through experimentation and iteration.
+            After setting up the project structure, I only tested the project setup on my own existing repository. 
+            At first, it didn't work for my teammates. Testing the setup on a new repository before sharing it with the team
+            would have caught the problem earlier and saved everyone some debugging time.
         </p>
     </section>
   </main>

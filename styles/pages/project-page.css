@@ -66,6 +66,10 @@
     border-radius: var(--border-radius);
 }
 
+.framed-link{
+    margin-top:2rem;
+}
+
 .video-container {
   position: relative;
   width: 100%;
