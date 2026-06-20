@@ -40,8 +40,8 @@
 /* Light mode */
 .bg-grid-light {
   background-image:
-    linear-gradient(to right, rgba(255,140,0,.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,140,0,.3) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,140,0,.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,140,0,.15) 1px, transparent 1px);
   opacity: 1;
   transition: opacity calc(var(--transition-speed) * 2) ease;
 }
